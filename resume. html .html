@@ -1,0 +1,240 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Resume Creator</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef1f5;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+h1 {
+    text-align: center;
+    color: #222;
+}
+
+.form-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #bbb;
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 7px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background: #444;
+}
+
+/* PHOTO UPLOAD */
+.photo-upload {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.photo-preview {
+    width: 120px;
+    height: 140px;
+    object-fit: cover;
+    border: 2px solid #333;
+    border-radius: 8px;
+    display: none;
+    margin: 10px auto;
+}
+
+/* RESUME */
+.resume {
+    background: white;
+    max-width: 850px;
+    margin: auto;
+    min-height: 1100px;
+    padding: 45px;
+    box-shadow: 0 3px 15px #aaa;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #222;
+    padding-bottom: 20px;
+    gap: 20px;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.header p {
+    margin: 6px 0;
+    color: #555;
+}
+
+.resume-photo {
+    width: 120px;
+    height: 140px;
+    object-fit: cover;
+    border: 2px solid #333;
+    display: none;
+}
+
+.section {
+    margin-top: 25px;
+}
+
+.section h3 {
+    border-bottom: 2px solid #222;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.section p {
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+@media (max-width: 600px) {
+
+    .resume {
+        padding: 25px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header h2 {
+        font-size: 26px;
+    }
+
+    .resume-photo {
+        width: 110px;
+        height: 130px;
+    }
+}
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    .form-box,
+    h1,
+    .print-btn {
+        display: none;
+    }
+
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .resume {
+        box-shadow: none;
+        max-width: none;
+        min-height: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Resume Creator</h1>
+
+<div class="form-box">
+
+<label>Full Name</label>
+<input id="name" type="text" placeholder="Enter your name">
+
+<label>Job Title</label>
+<input id="job" type="text" placeholder="Enter your job title">
+
+<label>Email</label>
+<input id="email" type="email" placeholder="example@gmail.com">
+
+<label>Phone</label>
+<input id="phone" type="tel" placeholder="+91 XXXXX XXXXX">
+
+<label>Address</label>
+<input id="address" type="text" placeholder="Your address">
+
+<!-- PHOTO UPLOAD -->
+<div class="photo-upload">
+
+<label>Profile Photo</label>
+
+<input
+    type="file"
+    id="photo"
+    accept="image/*"
+>
+
+<img
+    id="photoPreview"
+    class="photo-preview"
+    alt="Photo Preview"
+>
+
+</div>
+
+<label>Career Objective</label>
+<textarea
+    id="objective"
+    placeholder="Write your career objective">
+</textarea>
+
+<label>Education</label>
+<textarea
+    id="education
